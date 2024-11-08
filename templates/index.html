@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with AI Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="chat-container">
+        <div id="thread-history">
+            <div id="messages-container"></div>
+        </div>
+        <textarea id="user-input" placeholder="Type your message here..."></textarea>
+        <div id="button-container">
+            <button id="new-thread-btn">New Chat</button>
+            <button id="send-btn">Send</button>
+            <button id="voice-input-btn">🎤 Start Voice Input</button>
+            <label for="file-input" id="file-input-label">📂 Files</label>
+            <input type="file" id="file-input" style="display: none;"/>
+        </div>        
+    </div>
+    <script>
+        const currentAssistantId = "{{ assistant_id }}";
+    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

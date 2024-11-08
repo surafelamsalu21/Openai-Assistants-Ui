@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Choose Your AI Assistant</title>
+		<!-- Tailwind CSS CDN -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+			rel="stylesheet"
+		/>
+	</head>
+	<body class="font-sans bg-gray-100 text-gray-800">
+		<!-- Updated Logout Button with Inline Styling -->
+		<div
+			class="logout-container"
+			style="position: absolute; top: 20px; left: 20px; padding: 10px"
+		>
+			<a
+				href="{{ url_for('logout') }}"
+				class="logout-button"
+				style="
+					display: inline-block;
+					padding: 10px 20px;
+					font-size: 1rem;
+					color: #fff;
+					background-color: #4b6cb7;
+					border-radius: 8px;
+					text-decoration: none;
+					box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+					transition: background-color 0.3s, transform 0.3s;
+				"
+			>
+				Logout
+			</a>
+		</div>
+
+		<div id="landing-container" class="max-w-3xl mx-auto p-5 text-center">
+			<h1 class="text-4xl font-bold mb-8">Choose Your AI Assistant</h1>
+			<div
+				id="assistant-grid"
+				class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+			>
+				<div
+					class="assistant-card bg-white border border-gray-300 rounded-lg p-6 cursor-pointer hover:shadow-lg transition transform hover:-translate-y-1"
+					data-assistant-id="{{ BOOK_WRITER_ASSISTANT_ID }}"
+				>
+					<h2 class="text-2xl font-semibold">Book Writer</h2>
+					<p class="mt-2 text-gray-600">
+						An AI assistant specialized in writing and
+						discussing books.
+					</p>
+				</div>
+				<div
+					class="assistant-card bg-white border border-gray-300 rounded-lg p-6 cursor-pointer hover:shadow-lg transition transform hover:-translate-y-1"
+					data-assistant-id="{{ MEETING_SUMMARY_ASSISTANT_ID }}"
+				>
+					<h2 class="text-2xl font-semibold">
+						Meeting Summary Assistant
+					</h2>
+					<p class="mt-2 text-gray-600">
+						Summarizes meetings and extracts key points and
+						action items.
+					</p>
+				</div>
+				<div
+					class="assistant-card bg-white border border-gray-300 rounded-lg p-6 cursor-pointer hover:shadow-lg transition transform hover:-translate-y-1"
+					data-assistant-id="{{ PROJECT_CREATION_ASSISTANT_ID }}"
+				>
+					<h2 class="text-2xl font-semibold">
+						Project Creation Assistant
+					</h2>
+					<p class="mt-2 text-gray-600">
+						Helps set up and structure new projects with
+						necessary details.
+					</p>
+				</div>
+				<div
+					class="assistant-card bg-white border border-gray-300 rounded-lg p-6 cursor-pointer hover:shadow-lg transition transform hover:-translate-y-1"
+					data-assistant-id="{{ ASSIGNMENT_CREATION_ASSISTANT_ID }}"
+				>
+					<h2 class="text-2xl font-semibold">
+						Assignment Creation Assistant
+					</h2>
+					<p class="mt-2 text-gray-600">
+						Creates tasks and assignments for employees and
+						distributes them.
+					</p>
+				</div>
+				<div
+					class="assistant-card bg-white border border-gray-300 rounded-lg p-6 cursor-pointer hover:shadow-lg transition transform hover:-translate-y-1"
+					data-assistant-id="{{ LANGCHAIN_ASSISTANT_ID }}"
+				>
+					<h2 class="text-2xl font-semibold">
+						LangChain Assistant
+					</h2>
+					<p class="mt-2 text-gray-600">
+						An assistant specialized in LangChain tasks and
+						support.
+					</p>
+				</div>
+				<div
+					class="assistant-card bg-white border border-gray-300 rounded-lg p-6 cursor-pointer hover:shadow-lg transition transform hover:-translate-y-1"
+					data-assistant-id="{{ VANILLA_ASSISTANT_ID }}"
+				>
+					<h2 class="text-2xl font-semibold">
+						Assistant 2 - Vanilla
+					</h2>
+					<p class="mt-2 text-gray-600">
+						A general-purpose AI assistant with a classic
+						approach.
+					</p>
+				</div>
+				<div
+					class="assistant-card bg-white border border-gray-300 rounded-lg p-6 cursor-pointer hover:shadow-lg transition transform hover:-translate-y-1"
+					data-assistant-id="{{ CHOKO_ASSISTANT_ID }}"
+				>
+					<h2 class="text-2xl font-semibold">
+						Assistant 2 - Choko
+					</h2>
+					<p class="mt-2 text-gray-600">
+						A versatile AI assistant with a unique flavor.
+					</p>
+				</div>
+
+				<!-- New Assistant Placeholders for Testing -->
+				<div
+					class="assistant-card bg-white border border-gray-300 rounded-lg p-6 cursor-pointer hover:shadow-lg transition transform hover:-translate-y-1"
+					data-assistant-id="{{ ASSISTANT_1_ID }}"
+				>
+					<h2 class="text-2xl font-semibold">Assistant 1</h2>
+					<p class="mt-2 text-gray-600">
+						Placeholder response: Hello
+					</p>
+				</div>
+				<div
+					class="assistant-card bg-white border border-gray-300 rounded-lg p-6 cursor-pointer hover:shadow-lg transition transform hover:-translate-y-1"
+					data-assistant-id="{{ ASSISTANT_2_ID }}"
+				>
+					<h2 class="text-2xl font-semibold">Assistant 2</h2>
+					<p class="mt-2 text-gray-600">
+						Placeholder response: Chocolate
+					</p>
+				</div>
+				<div
+					class="assistant-card bg-white border border-gray-300 rounded-lg p-6 cursor-pointer hover:shadow-lg transition transform hover:-translate-y-1"
+					data-assistant-id="{{ ASSISTANT_3_ID }}"
+				>
+					<h2 class="text-2xl font-semibold">Assistant 3</h2>
+					<p class="mt-2 text-gray-600">
+						Placeholder response: Banana
+					</p>
+				</div>
+				<div
+					class="assistant-card bg-white border border-gray-300 rounded-lg p-6 cursor-pointer hover:shadow-lg transition transform hover:-translate-y-1"
+					data-assistant-id="{{ ASSISTANT_4_ID }}"
+				>
+					<h2 class="text-2xl font-semibold">Assistant 4</h2>
+					<p class="mt-2 text-gray-600">
+						Placeholder response: Strawberry
+					</p>
+				</div>
+				<div
+					class="assistant-card bg-white border border-gray-300 rounded-lg p-6 cursor-pointer hover:shadow-lg transition transform hover:-translate-y-1"
+					data-assistant-id="{{ ASSISTANT_5_ID }}"
+				>
+					<h2 class="text-2xl font-semibold">Assistant 5</h2>
+					<p class="mt-2 text-gray-600">
+						Placeholder response: Vanilla
+					</p>
+				</div>
+			</div>
+		</div>
+		<script src="{{ url_for('static', filename='landing.js') }}"></script>
+	</body>
+</html>
